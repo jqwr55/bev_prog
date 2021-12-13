@@ -1,5 +1,5 @@
 #include <fcntl.h>
-#include <common/common.h>
+#include <common.h>
 
 enum TokenType : u32 {
     TOKEN_ERROR,
@@ -624,6 +624,13 @@ u32 ParseArgs(u32 argc, const char* argv[], Context* result, byte* mem) {
     u32 ret = 0;
     for(u32 i = 1; i < argc; i++) {
         auto path = argv[i];
+        if(str_cmp(path, "-help")) {
+
+            global_print("s", "To run in repl mode type -repl\n");
+            global_print("s", "To run a file type the relative path to the file ex: ./test\n");
+            global_io_flush();
+            continue;
+        }
         if(str_cmp(path, "-repl")) {
             Mem<Context>(result + ret++) = MakeReplContext(mem);
             continue;

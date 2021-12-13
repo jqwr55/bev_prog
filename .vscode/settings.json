@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+<<<<<<< HEAD
+        "chrono": "cpp"
+=======
+        "*.tcc": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp",
+        "limits": "cpp",
+        "stdexcept": "cpp",
+        "string": "cpp"
+>>>>>>> 650429318f61b03cff23bd27811bae55e8db1647
+    }
+}
